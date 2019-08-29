@@ -1,12 +1,15 @@
-# user defined class that makes use of the sub classes of the CalculatorError class
+# user defined class that makes use of the sub classes of the CalculatorError
+# class
 # CalculatorError class has the OperandError and OperatorError extending it
-# Calculator class uses these two subclasses to check for errors (operand and operator errors)
+# Calculator class uses these two subclasses to check for errors (operand and
+# operator errors)
 from operanderror import OperandError
 from operatorerror import OperatorError
 
 
 class Calculator:
-    """ a class that makes use of OperandError and Operator error and works binarily"""
+    """ a class that makes use of OperandError and OperatorError, and works
+     binarily"""
 
     def __init__(self, operand_1, operator, operand_2):
         self.operand_1 = operand_1
@@ -35,11 +38,14 @@ class Calculator:
                 return self.product()
             elif self.operator == '**':
                 return self.pow()
-            elif self.operator == '/' and OperandError(self.operand_2).raise_OperandZeroError():
+            elif self.operator == '/' and OperandError(
+            	self.operand_2).raise_OperandZeroError():
                 return self.div()
-            elif self.operator == '//' and OperandError(self.operand_2).raise_OperandZeroError():
+            elif self.operator == '//' and OperandError(
+            	self.operand_2).raise_OperandZeroError():
                 return self.floor_div()
-            elif self.operator == '%' and OperandError(self.operand_2).raise_OperandZeroError():
+            elif self.operator == '%' and OperandError(
+            	self.operand_2).raise_OperandZeroError():
                 return self.mod()
             else:
                 exit
@@ -59,17 +65,22 @@ class Calculator:
         return self.operand_1 * self.operand_2
 
     def pow(self):
-        """ returns the power of one operands to the exponent of the second operand """
+        """ returns the power of one operand to the exponent of the second 
+        operand """
         return self.operand_1 ** self.operand_2
 
     def mod(self):
-        """ returns the remainder of one operands when divided by the second operand """
+        """ returns the remainder of one operand when divided by the second 
+        operand """
         return self.operand_1 % self.operand_2
 
     def div(self):
-        """ return the ratio of one operands when divided by the second operand """
+        """ return the ratio of one operand when divided by the second 
+        operand """
         return self.operand_1 / self.operand_2
 
     def floor_div(self):
-        """ return the quotient of one operands when divided by the second operand """
+        """ return the quotient of one operand when divided by the second
+         operand """
         return self.operand_1 // self.operand_2
+        

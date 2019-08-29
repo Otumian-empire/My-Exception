@@ -11,14 +11,16 @@ class OperatorError(CalculatorError):
         self.operator = operator
 
     def raise_OperatorError(self):
-        """ raises an OperatorError (this is likely to be a SynthaxError as it is called when 
-        the operator is nor recognised)"""
+        """ raises an OperatorError (this is likely to be a SynthaxError as
+        it is called when the operator is nor recognised)"""
 
         operators = ['%', '*', '**', '-', '+', '/', '//']
 
         if self.operator not in operators:
             print(
-                f"OperatorError: {repr(self.operator)}, is not known, use any of {repr(operators)}")
+                f"OperatorError: {repr(self.operator)}, is not known, use \
+any of {repr(operators)}")
             return False
 
         return True
+        
